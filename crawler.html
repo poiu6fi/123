@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Downloader</title>
+    <!-- 引入 jQuery 庫 -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <!-- 引入 FileSaver.js 庫 -->
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+    <!-- 引入自定義的 JavaScript 文件 -->
+    <script src="fileDownloader.js"></script>
+</head>
+<body>
+    <h1>網站文件抓取器</h1>
+    <input type="text" id="urlInput" placeholder="請輸入網址" style="width: 300px;">
+    <button id="downloadButton">抓取文件</button>
+
+    <script>
+        // 當按鈕被點擊時，執行抓取文件的函數
+        $(document).ready(function() {
+            $('#downloadButton').click(function() {
+                var url = $('#urlInput').val(); // 獲取用戶輸入的網址
+                if (url) {
+                    downloadFilesFromUrl(url); // 調用下載文件的函數
+                } else {
+                    alert('請輸入有效的網址');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
